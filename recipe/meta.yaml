@@ -10,7 +10,7 @@ source:
   sha256: 16eec827f64340c226ba9a8463f001901d469bc400a1e88b849f258f9ef0d100
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win]
   script:
     - set -ex
@@ -31,7 +31,7 @@ test:
   requires:
     - pkg-config
   commands:
-    - pkg-config {{ name }} --exact-version {{ version }}
+    - pkg-config {{ name }} --exact-version {{ version }}  # [build_platform == target_platform]
     - test -f $PREFIX/lib/libjsonfortran$SHLIB_EXT
 
 about:
