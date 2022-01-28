@@ -166,4 +166,5 @@ Feedstock Maintainers
 =====================
 
 * [@awvwgk](https://github.com/awvwgk/)
+* [@jacobwilliams](https://github.com/jacobwilliams/)
 
