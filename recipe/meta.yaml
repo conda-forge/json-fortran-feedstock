@@ -27,6 +27,7 @@ requirements:
     - {{ stdlib("c") }}
     - cmake
     - ninja
+    - rm -rf $PREFIX/lib/libjsonfortran.a  # is there an env like $SHLIB_EXT for static libs?
 
 test:
   requires:
