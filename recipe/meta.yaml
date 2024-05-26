@@ -1,5 +1,5 @@
 {% set name = "json-fortran" %}
-{% set version = "8.5.0" %}
+{% set version = "8.5.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,14 +7,14 @@ package:
 
 source:
   url: https://github.com/jacobwilliams/{{ name }}/archive/refs/tags/{{ version }}.tar.gz
-  sha256: ad62d4133c5a71978c753115c020e550f1008dc4c878d4306cdeb69790fe9813
+  sha256: 07fb1afb72b17eac3a89724ac77523de2247c0625843fb559738168ee08ebf18
 
 build:
   number: 0
   skip: true  # [win]
   script:
     - set -ex
-    - cmake ${CMAKE_ARGS} -B_build -GNinja -DUSE_GNU_INSTALL_CONVENTION=true -DSKIP_DOC_GEN=true -DENABLE_TESTS=true
+    - cmake ${CMAKE_ARGS} -B_build -GNinja -DUSE_GNU_INSTALL_CONVENTION=true -DSKIP_DOC_GEN=true
     - cmake --build _build
     - cmake --build _build --target check  # [build_platform == target_platform]
     - cmake --install _build
