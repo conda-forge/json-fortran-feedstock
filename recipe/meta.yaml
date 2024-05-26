@@ -14,7 +14,7 @@ build:
   skip: true  # [win]
   script:
     - set -ex
-    - cmake ${CMAKE_ARGS} -B_build -GNinja -DUSE_GNU_INSTALL_CONVENTION=true -DSKIP_DOC_GEN=true
+    - cmake ${CMAKE_ARGS} -B_build -GNinja -DUSE_GNU_INSTALL_CONVENTION=true -DSKIP_DOC_GEN=true -DENABLE_TESTS=true
     - cmake --build _build
     - cmake --build _build --target check  # [build_platform == target_platform]
     - cmake --install _build
