@@ -18,6 +18,7 @@ build:
     - cmake --build _build
     - cmake --build _build --target check  # [build_platform == target_platform]
     - cmake --install _build
+    - rm -rf $PREFIX/lib/libjsonfortran.a  # Remove static lib. is there an env like $SHLIB_EXT for static libs?
   run_exports:
     - {{ pin_subpackage(name, max_pin='x.x') }}
 
@@ -27,7 +28,6 @@ requirements:
     - {{ stdlib("c") }}
     - cmake
     - ninja
-    - rm -rf $PREFIX/lib/libjsonfortran.a  # is there an env like $SHLIB_EXT for static libs?
 
 test:
   requires:
