@@ -1,5 +1,5 @@
 {% set name = "json-fortran" %}
-{% set version = "9.3.0" %}
+{% set version = "9.3.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/jacobwilliams/{{ name }}/archive/refs/tags/{{ version }}.tar.gz
-  sha256: 7f29ded5283ba62b0ee9829ffe860326a17bef207ee9d6cbe68bb7cc3ecf1cfc
+  sha256: 301a8d205bc7510b21c731130c30babd552c33e3f20568ce732b5e165b1f7a86
 
 build:
   number: 0
